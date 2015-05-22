@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style type="text/css">
+    .canvas {
+        background-color: #999999;
+    }
+    
+    circle.hero {
+        stroke: #aa0000;
+        fill: #cc0000;
+    }
+    
+    circle.enemy {
+        fill: #000000;
+    }
+    
+    .hits {
+        float: left;
+    }
+    
+    .countdown {
+        float: right;
+    }
+    
+    .game-container {
+        height: 600px;
+    }
+    
+    .stats {
+        margin-top: 25px;
+        position: relative;
+    }
+    
+    .inner {
+        width: 600px;
+    }
+    
+    .start-btn {
+        margin-top: 20px;
+    }
+    
+    .lowest-hit-count-view {
+        visibility: hidden;
+        position: absolute;
+        top: 100%;
+        padding: 10px;
+        width: 100%;
+        background-color: rgba(256,256,256,0.5);
+        font-size: 16px;
+    }
+    .lowest-hit-count-list {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0 0 0;
+    }
+    .lowest-hit-count-list-item {
+        margin-bottom: 12px;
+    }
+    .lowest-hit-count-list-item span {
+        font-weight: 500;
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .lowest-hit-count-list-header {
+        padding: 10px 0;
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner center-block">
+            <div class="stats clearfix">
+                <h2 class="hits">
+                <span class="hits-label">Hits: </span>
+                <span class="hits-counter">0</span>
+          </h2>
+                <h2 class="countdown">
+                <span class="countdown-label">Time Remaining: </span>
+                <span class="countdown-display">0</span>
+          </h2>
+                <div class="lowest-hit-count-view">
+                    <form class="form">
+                        <div class="form-group">
+                            <label for="lowest-hit-count-name-field">Congratulations! You got the lowest hit count yet.</label>
+                            <input type="text" class="form-control" id="lowest-hit-count-name-field" placeholder="Your Name">
+                        </div>
+                        <button type="button" class="lowest-hit-count-btn btn btn-default">Save</button>
+                    </form>
+                    <h2 class="lowest-hit-count-list-header">All Stars</h2>
+                    <ul class="lowest-hit-count-list"></ul>
+                </div>
+            </div>
+            <div class="game-container"></div>
+            <button class="btn btn-success btn-lg start-btn">Start</button>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+<script src="collider.js"></script>
+
+</html>
